@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-container {
+  @apply w-full h-screen mx-auto bg-[#1abc9c] flex items-center justify-center;
+}
+.form-wrapper {
+  @apply bg-[#34495e] w-1/4 md:w-2/4 sm:w-full px-4 py-4 rounded-md shadow-md border-[#34495e] border-t-[1px] border-l-[1px];
+}
+.form-title {
+  @apply text-[#ecf0f1] font-semibold border-b-[1px] border-[#ecf0f1] pb-2;
+}
+.form-form {
+  @apply py-4;
+}
+.form-input {
+  @apply flex flex-col py-2;
+}
+.form-input label,
+.form-input input {
+  @apply text-[#ecf0f1];
+}
+.form-input label {
+  @apply text-sm pb-1 hidden;
+}
+.form-input input {
+  @apply px-1 py-1.5 rounded-sm text-[#34495e] outline-[#1abc9c] transition-all delay-100;
+}
+.form-button {
+  @apply flex flex-col;
+}
+.form-button button {
+  @apply bg-[#1abc9c] font-normal text-sm mt-2 px-2 py-1 rounded-sm shadow-md border-2 border-transparent hover:bg-[#34495e] hover:text-[#ecf0f1] hover:border-[#1abc9c] transition delay-75;
+}
+.form-button a {
+  @apply text-sm text-[#ecf0f1] mt-2 underline;
+}

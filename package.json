@@ -1,0 +1,12 @@
+{
+  "name": "login-registration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./public/assets/css/style.css -o ./public/assets/css/style.output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
