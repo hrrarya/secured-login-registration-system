@@ -36,3 +36,9 @@
 .form-button a {
   @apply text-sm text-[#ecf0f1] mt-2 underline;
 }
+
+
+/* Home */
+.home-title {
+  @apply text-white;
+}

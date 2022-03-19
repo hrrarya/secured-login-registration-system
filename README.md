@@ -5,12 +5,17 @@
 - Tailwind
 - PHP 7.4
 - Mysql
+    - database name: logreg
+    - host: localhost
+    - username: root
+    - password:
+
 - and many more
 
 ### TODO
 
 - ~~HTML/CSS Design (Login & Registration page)~~
-- Setup MYSQL db
+- ~~Setup MYSQL db~~
 - Login Page PHP
 - Registration Page PHP
 - JWT authentication
