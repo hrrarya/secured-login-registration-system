@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./assets/css/style.output.css" rel="stylesheet" />
-    <title>Registration Page</title>
-  </head>
-  <body>
-    <div class="page-container">
+<?php
+  include_once './lib/header.php';
+
+  $error_msg = 'hell0o';
+  if( isset($_POST['register']) && !empty($_POST['register'])) {
+
+    $name = $user->checkInput($_POST['name']);
+    $email = $user->checkInput($_POST['email']);
+    $pass = $user->checkInput($_POST['password']);
+    $confirm_pass = $user->checkInput($_POST['confirm_password']);
+
+    if( $pass !== $confirm_pass) {
+      // $error_msg = 'Password doesn\'t matched with confirm password';
+      $error_msg = $pass;
+      echo  $error_msg;
+    }
+
+  }
+
+?>
       <div class="form-wrapper">
         <h1 class="form-title">Registration Page</h1>
-        <form class="form-form">
+        <form name="register" action="" class="form-form" method="post">
           <div class="form-input">
             <label for="full-name">Full Name</label>
             <input
@@ -40,15 +49,25 @@
               type="password"
               id="confirm-password"
               placeholder="Confirm Password"
-              name="confirm-password"
+              name="confirm_password"
             />
           </div>
           <div class="form-button">
             <button type="submit">Sign Up</button>
-            <a href="./login.html">Already have an acount? Click here</a>
+            <a href="./login.php">Already have an acount? Click here</a>
           </div>
         </form>
+
       </div>
-    </div>
-  </body>
-</html>
+      <?php
+        if( $error_msg !== '') {
+          ?>
+          <div class="message_field error">
+            <p><?php echo $error_msg ?></p>
+          </div>
+          <?php
+        }
+      ?>
+<?php
+  include_once './lib/footer.php';
+?>

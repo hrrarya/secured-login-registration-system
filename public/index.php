@@ -1,8 +1,8 @@
-<?php 
-  include './assets/lib/header.php';
+<?php
+  include_once './lib/header.php';
 ?>
         <h1 class="home-title">Home Page</h1>
     
 <?php 
-  include_once 'assets/lib/footer.php';
+  include_once './lib/footer.php';
 ?>

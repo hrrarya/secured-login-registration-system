@@ -16,8 +16,8 @@
 
 - ~~HTML/CSS Design (Login & Registration page)~~
 - ~~Setup MYSQL db~~
-- Login Page PHP
 - Registration Page PHP
+- Login Page PHP
 - JWT authentication
 - Remember login
 - Email verification(Confirmation)
