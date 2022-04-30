@@ -1,6 +1,6 @@
 <?php
   include_once '../core/init.php';
-
+  // new Hridoy\LoginRegistration\Init();
 ?>
 
 <!DOCTYPE html>

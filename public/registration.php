@@ -1,8 +1,7 @@
 <?php
   include_once './lib/header.php';
-
-  $error_msg = 'hell0o';
-  if( isset($_POST['register']) && !empty($_POST['register'])) {
+    
+  if( isset($_POST['register_button']) && !empty($_POST['register_button']) ) {
 
     $name = $user->checkInput($_POST['name']);
     $email = $user->checkInput($_POST['email']);
@@ -10,17 +9,26 @@
     $confirm_pass = $user->checkInput($_POST['confirm_password']);
 
     if( $pass !== $confirm_pass) {
-      // $error_msg = 'Password doesn\'t matched with confirm password';
-      $error_msg = $pass;
-      echo  $error_msg;
+      $error_msg = 'Password doesn\'t matched with confirm password';
+    }else {
+      $res = $user->registration(array(
+        'name' => $name,
+        'email' => $email,
+        'password' => md5($pass)
+      ));
+      if( $res ) {
+        $succes = "Registration succesfull.redirecting to home page";
+        header('refresh:3;url=index.php');
+      }else {
+        $error_msg = 'Registration failed.Try again.';
+      }
     }
 
   }
-
 ?>
       <div class="form-wrapper">
         <h1 class="form-title">Registration Page</h1>
-        <form name="register" action="" class="form-form" method="post">
+        <form name="register" class="form-form" method="post">
           <div class="form-input">
             <label for="full-name">Full Name</label>
             <input
@@ -53,17 +61,27 @@
             />
           </div>
           <div class="form-button">
-            <button type="submit">Sign Up</button>
+            <!-- <button type="submit">Sign Up</button> -->
+            <input type="submit" name="register_button" value="Register" />
             <a href="./login.php">Already have an acount? Click here</a>
           </div>
         </form>
 
       </div>
       <?php
-        if( $error_msg !== '') {
+        if( isset( $error_msg )  && $error_msg !=  '' ) {
           ?>
           <div class="message_field error">
             <p><?php echo $error_msg ?></p>
+          </div>
+          <?php
+        }
+      ?>
+      <?php
+        if( isset( $succes )  && $succes !=  '' ) {
+          ?>
+          <div class="message_field success">
+            <p><?php echo $succes ?></p>
           </div>
           <?php
         }

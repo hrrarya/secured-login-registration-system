@@ -37,12 +37,17 @@
   @apply text-sm text-[#ecf0f1] mt-2 underline;
 }
 
-
 /* Home */
 .home-title {
   @apply text-white;
 }
 
 .message_field {
-  @apply bg-red-400 px-2 py-3 rounded-lg text-gray-50 font-semibold shadow-sm shadow-red-50 border-red-50 border-t border-r w-11/12 mx-4 my-4;
+  @apply px-2 py-3 rounded-lg text-gray-50 font-semibold shadow-sm shadow-red-50 border-red-50 border-t border-r w-11/12 mx-4 my-4;
+}
+.message_field.success {
+  @apply bg-green-400;
+}
+.message_field.error {
+  @apply bg-red-400;
 }
